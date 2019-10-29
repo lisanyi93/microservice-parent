@@ -1,0 +1,26 @@
+server:
+  port: 8888 #服务端口
+
+spring:
+  application:
+    name: microservice-api-gateway #指定服务名
+
+zuul:
+  routes:
+    #goods-service: #goods-service这个名字是任意写的
+      #path: /goods-service/** #配置请求URL的请求规则
+      #url: http://127.0.0.1:8081 #真正的微服务地址
+      #serviceId: microservice-goods #指定Eureka注册中心中的服务id
+    #更简化配置
+    microservice-goods: /goods-service/**
+    #指定忽略服务
+    #ignored-services: 服务1的Id,服务2的Id
+
+eureka:
+  client:
+    registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true
+    fetchRegistry: true #是否从Eureka中获取注册信息，默认为true
+    serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
+      defaultZone: http://admin:admin@127.0.0.1:8761/eureka/,http://admin:admin@127.0.0.1:8762/eureka/
+  instance:
+    prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
