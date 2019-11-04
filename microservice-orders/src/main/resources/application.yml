@@ -1,6 +1,5 @@
-
 server:
-  port: 8082  #¶©µ¥Î¢·şÎñµÄ¶Ë¿ÚºÅ
+  port: 8082  #è®¢å•å¾®æœåŠ¡çš„ç«¯å£å·
 
 goods:
   item:
@@ -8,16 +7,20 @@ goods:
 
 spring:
   application:
-    name: microservice-orders #Ö¸¶¨·şÎñÃû
+    name: microservice-orders #æŒ‡å®šæœåŠ¡å
 
 eureka:
   client:
-    registerWithEureka: true #ÊÇ·ñ½«×Ô¼º×¢²áµ½Eureka·şÎñÖĞ£¬Ä¬ÈÏÎªtrue
-    fetchRegistry: true #ÊÇ·ñ´ÓEurekaÖĞ»ñÈ¡×¢²áĞÅÏ¢£¬Ä¬ÈÏÎªtrue
-    serviceUrl: #Eureka¿Í»§¶ËÓëEureka·şÎñ¶Ë½øĞĞ½»»¥µÄµØÖ·
+    registerWithEureka: true #æ˜¯å¦å°†è‡ªå·±æ³¨å†Œåˆ°EurekaæœåŠ¡ä¸­ï¼Œé»˜è®¤ä¸ºtrue
+    fetchRegistry: true #æ˜¯å¦ä»Eurekaä¸­è·å–æ³¨å†Œä¿¡æ¯ï¼Œé»˜è®¤ä¸ºtrue
+    serviceUrl: #Eurekaå®¢æˆ·ç«¯ä¸EurekaæœåŠ¡ç«¯è¿›è¡Œäº¤äº’çš„åœ°å€
       defaultZone: http://admin:admin@127.0.0.1:8761/eureka/,http://admin:admin@127.0.0.1:8762/eureka/
+  instance:
+    prefer-ip-address: true #å°†è‡ªå·±çš„ipåœ°å€æ³¨å†Œåˆ°EurekaæœåŠ¡ä¸­
+    #ip-address: 127.0.0.1 #æŒ‡å®šip
+    instance-id: ${spring.application.name}:${server.port} #æŒ‡å®šå®ä¾‹
 
-#ÉèÖÃ¸ºÔØ¾ùºâµÄÎªËæ»ú
+#è®¾ç½®è´Ÿè½½å‡è¡¡çš„ä¸ºéšæœº
 microservice-goods:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

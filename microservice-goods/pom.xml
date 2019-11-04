@@ -55,12 +55,10 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <!--需要引入该jar才能使bootstrap配置文件生效-->
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-context</artifactId>
-        </dependency>
-
-
+        </dependency>-->
         <!-- Eureka服务的依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -74,6 +72,7 @@
         </dependency>
     </dependencies>
 
+    <!--插件-->
     <build>
         <plugins>
             <plugin>
@@ -82,5 +81,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

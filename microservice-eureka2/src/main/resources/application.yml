@@ -1,26 +1,25 @@
-
 server:
-  port: 8762 #·şÎñ¶Ë¿Ú
+  port: 8762 #æœåŠ¡ç«¯å£
 
 spring:
   application:
-    name: microservice-eureka #Ö¸¶¨·şÎñÃû
+    name: microservice-eureka #æŒ‡å®šæœåŠ¡å
 
 eureka:
   client:
-    registerWithEureka: true #ÊÇ·ñ½«×Ô¼º×¢²áµ½Eureka·şÎñÖĞ£¬±¾Éí¾ÍÊÇËùÓĞÎŞĞè×¢²á
-    fetchRegistry: true #ÊÇ·ñ´ÓEurekaÖĞ»ñÈ¡×¢²áĞÅÏ¢
-    serviceUrl: #Eureka¿Í»§¶ËÓëEureka·şÎñ¶Ë½øĞĞ½»»¥µÄµØÖ·
+    registerWithEureka: true #æ˜¯å¦å°†è‡ªå·±æ³¨å†Œåˆ°EurekaæœåŠ¡ä¸­ï¼Œæœ¬èº«å°±æ˜¯æ‰€æœ‰æ— éœ€æ³¨å†Œ
+    fetchRegistry: true #æ˜¯å¦ä»Eurekaä¸­è·å–æ³¨å†Œä¿¡æ¯
+    serviceUrl: #Eurekaå®¢æˆ·ç«¯ä¸EurekaæœåŠ¡ç«¯è¿›è¡Œäº¤äº’çš„åœ°å€
       defaultZone: http://admin:admin@127.0.0.1:8761/eureka/
   instance:
-    prefer-ip-address: true #½«×Ô¼ºµÄipµØÖ·×¢²áµ½Eureka·şÎñÖĞ
+    prefer-ip-address: true #å°†è‡ªå·±çš„ipåœ°å€æ³¨å†Œåˆ°EurekaæœåŠ¡ä¸­
     ip-address: 127.0.0.1
-    instance-id: ${spring.application.name}:${server.port} #Ö¸¶¨ÊµÀıid
+    instance-id: ${spring.application.name}:${server.port} #æŒ‡å®šå®ä¾‹id
 
-#ÎªEurekaÌí¼ÓÓÃ»§ÈÏÖ¤
+#ä¸ºEurekaæ·»åŠ ç”¨æˆ·è®¤è¯
 security:
   basic:
-    enable: true #¿ªÆô»ùÓÚHTTP basicµÄÈÏÖ¤
-  user: #ÅäÖÃÓÃ»§µÄÕËºÅĞÅÏ¢
+    enable: true #å¼€å¯åŸºäºHTTP basicçš„è®¤è¯
+  user: #é…ç½®ç”¨æˆ·çš„è´¦å·ä¿¡æ¯
     name: admin
     password: admin

@@ -22,7 +22,7 @@ public class MicroserviceOrdersApplicationTests {
      */
     @Test
     public void test(){
-        String serviceId = "microservice-orders";
+        String serviceId = "microservice-goods";
         for (int i = 0; i < 100; i++) {
             ServiceInstance serviceInstance = this.loadBalancerClient.choose(serviceId);
             System.out.println("第"+(i+1)+"次：" + serviceInstance.getHost() + ": " + serviceInstance.getPort());
