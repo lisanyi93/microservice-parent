@@ -1,5 +1,6 @@
 package com.lsy.microserviceorders.service;
 
+import com.lsy.microserviceorders.client.GoodsFeignClient;
 import com.lsy.microserviceorders.entity.Goods;
 import com.lsy.microserviceorders.properties.OrderProerties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;

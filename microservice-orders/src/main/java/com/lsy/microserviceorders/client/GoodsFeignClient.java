@@ -1,9 +1,10 @@
-package com.lsy.microserviceorders.service;
+package com.lsy.microserviceorders.client;
 
 import com.lsy.microserviceorders.entity.Goods;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @FeignClient(value = "microservice-goods") // 申明这是一个Feign客户端，并且指明服务id, 不区分大小写
 public interface GoodsFeignClient {
@@ -14,14 +15,14 @@ public interface GoodsFeignClient {
 	public Goods queryGoodsById(@PathVariable("id") Long id);
 
 	//Feign的多参数构造
-/*	@GetMapping(value = "/goods")
-	public Goods queryGoodsByList(@RequestParam("title") String title,@RequestParam("price") Long price);
+	@GetMapping(value = "/goods")
+	public Goods queryGoodsByList(@RequestParam("title") String title, @RequestParam("price") Long price);
 
 	@GetMapping(value = "/goods")
 	public Goods queryGoodsByList(@RequestParam Map<String,Object> params);
 
 	@PostMapping(value = "/goods")
-	public Goods addGoods(@RequestBody Map<String,Object> params);*/
+	public Goods addGoods(@RequestBody Map<String,Object> params);
 
 
 }
