@@ -12,7 +12,13 @@ spring:
           #私有仓库 要配置用户名和密码
           #username: zhangzhijun
           #password: 123456
+    rabbitmq: #RabbitMQ相关的配置
+      host: 127.0.0.1
+      port: 5672
+      username: guest
+      password: guest
 
+#eureka配置
 eureka:
   client:
     registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true
@@ -21,3 +27,7 @@ eureka:
       defaultZone: http://admin:admin@127.0.0.1:8761/eureka/,http://admin:admin@127.0.0.1:8762/eureka/
   instance:
     prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
+
+management:
+  security:
+    enabled: false #是否开启actuator安全认证
