@@ -70,6 +70,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
+        <!-- RabbitMQ实现配置自动更新，客户端和服务端都要加载此依赖，一旦配置中心有修改，就会通过Web Hook钩子通知到各个微服务配置已更新
+    目前Spring Cloud Bus消息总线只是实现了对RabbitMQ以及Kafka的支持-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
