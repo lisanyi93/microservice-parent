@@ -1,26 +1,26 @@
 server:
-  port: 8888 #·şÎñ¶Ë¿Ú
+  port: 8888 #æœåŠ¡ç«¯å£
 
 spring:
   application:
-    name: microservice-api-gateway #Ö¸¶¨·şÎñÃû
+    name: microservice-api-gateway #æŒ‡å®šæœåŠ¡å
 
 zuul:
   routes:
-    #goods-service: #goods-serviceÕâ¸öÃû×ÖÊÇÈÎÒâĞ´µÄ
-      #path: /goods-service/** #ÅäÖÃÇëÇóURLµÄÇëÇó¹æÔò
-      #url: http://127.0.0.1:8081 #ÕæÕıµÄÎ¢·şÎñµØÖ·
-      #serviceId: microservice-goods #Ö¸¶¨Eureka×¢²áÖĞĞÄÖĞµÄ·şÎñid
-    #¸ü¼ò»¯ÅäÖÃ
+    #goods-service: #goods-serviceè¿™ä¸ªåå­—æ˜¯ä»»æ„å†™çš„
+      #path: /goods-service/** #é…ç½®è¯·æ±‚URLçš„è¯·æ±‚è§„åˆ™
+      #url: http://127.0.0.1:8081 #çœŸæ­£çš„å¾®æœåŠ¡åœ°å€
+      #serviceId: microservice-goods #æŒ‡å®šEurekaæ³¨å†Œä¸­å¿ƒä¸­çš„æœåŠ¡id
+    #æ›´ç®€åŒ–é…ç½®
     microservice-goods: /goods-service/**
-    #Ö¸¶¨ºöÂÔ·şÎñ
-    #ignored-services: ·şÎñ1µÄId,·şÎñ2µÄId
+    #æŒ‡å®šå¿½ç•¥æœåŠ¡
+    #ignored-services: æœåŠ¡1çš„Id,æœåŠ¡2çš„Id
 
 eureka:
   client:
-    registerWithEureka: true #ÊÇ·ñ½«×Ô¼º×¢²áµ½Eureka·şÎñÖĞ£¬Ä¬ÈÏÎªtrue
-    fetchRegistry: true #ÊÇ·ñ´ÓEurekaÖĞ»ñÈ¡×¢²áĞÅÏ¢£¬Ä¬ÈÏÎªtrue
-    serviceUrl: #Eureka¿Í»§¶ËÓëEureka·şÎñ¶Ë½øĞĞ½»»¥µÄµØÖ·
+    registerWithEureka: true #æ˜¯å¦å°†è‡ªå·±æ³¨å†Œåˆ°EurekaæœåŠ¡ä¸­ï¼Œé»˜è®¤ä¸ºtrue
+    fetchRegistry: true #æ˜¯å¦ä»Eurekaä¸­è·å–æ³¨å†Œä¿¡æ¯ï¼Œé»˜è®¤ä¸ºtrue
+    serviceUrl: #Eurekaå®¢æˆ·ç«¯ä¸EurekaæœåŠ¡ç«¯è¿›è¡Œäº¤äº’çš„åœ°å€
       defaultZone: http://admin:admin@127.0.0.1:8761/eureka/,http://admin:admin@127.0.0.1:8762/eureka/
   instance:
-    prefer-ip-address: true #½«×Ô¼ºµÄipµØÖ·×¢²áµ½Eureka·şÎñÖĞ
+    prefer-ip-address: true #å°†è‡ªå·±çš„ipåœ°å€æ³¨å†Œåˆ°EurekaæœåŠ¡ä¸­

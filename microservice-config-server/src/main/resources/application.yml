@@ -1,24 +1,23 @@
 server:
-  port: 6688 #·şÎñ¶Ë¿Ú
+  port: 6688 #æœåŠ¡ç«¯å£
 
 spring:
   application:
-    name: microservice-config-server #Ö¸¶¨·şÎñÃû
+    name: microservice-config-server #æŒ‡å®šæœåŠ¡å
   cloud:
     config:
       server:
-        git: #ÅäÖÃgit²Ö¿âµØÖ·
+        git: #é…ç½®gitä»“åº“åœ°å€
           uri: https://github.com/lisanyi93/springcloudConfig.git
-          #Ë½ÓĞ²Ö¿â ÒªÅäÖÃÓÃ»§ÃûºÍÃÜÂë
+          #ç§æœ‰ä»“åº“ è¦é…ç½®ç”¨æˆ·åå’Œå¯†ç 
           #username: zhangzhijun
           #password: 123456
 
 eureka:
   client:
-    registerWithEureka: true #ÊÇ·ñ½«×Ô¼º×¢²áµ½Eureka·şÎñÖĞ£¬Ä¬ÈÏÎªtrue
-    fetchRegistry: true #ÊÇ·ñ´ÓEurekaÖĞ»ñÈ¡×¢²áĞÅÏ¢£¬Ä¬ÈÏÎªtrue
-    serviceUrl: #Eureka¿Í»§¶ËÓëEureka·şÎñ¶Ë½øĞĞ½»»¥µÄµØÖ·
+    registerWithEureka: true #æ˜¯å¦å°†è‡ªå·±æ³¨å†Œåˆ°EurekaæœåŠ¡ä¸­ï¼Œé»˜è®¤ä¸ºtrue
+    fetchRegistry: true #æ˜¯å¦ä»Eurekaä¸­è·å–æ³¨å†Œä¿¡æ¯ï¼Œé»˜è®¤ä¸ºtrue
+    serviceUrl: #Eurekaå®¢æˆ·ç«¯ä¸EurekaæœåŠ¡ç«¯è¿›è¡Œäº¤äº’çš„åœ°å€
       defaultZone: http://admin:admin@127.0.0.1:8761/eureka/,http://admin:admin@127.0.0.1:8762/eureka/
   instance:
-    prefer-ip-address: true #½«×Ô¼ºµÄipµØÖ·×¢²áµ½Eureka·şÎñÖĞ
-
+    prefer-ip-address: true #å°†è‡ªå·±çš„ipåœ°å€æ³¨å†Œåˆ°EurekaæœåŠ¡ä¸­
