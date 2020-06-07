@@ -16,7 +16,7 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 
-	@GetMapping(value = "order/{orderId}")
+	@GetMapping(value = "orders/{orderId}")
 	public Order queryOrderById(@PathVariable("orderId") String orderId) {
 		return this.orderService.queryOrderById(orderId);
 	}

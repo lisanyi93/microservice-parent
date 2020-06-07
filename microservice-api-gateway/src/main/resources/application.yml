@@ -7,12 +7,15 @@ spring:
 
 zuul:
   routes:
-    #goods-service: #goods-service这个名字是任意写的
-      #path: /goods-service/** #配置请求URL的请求规则
-      #url: http://127.0.0.1:8081 #真正的微服务地址
-      #serviceId: microservice-goods #指定Eureka注册中心中的服务id
-    #更简化配置
-    microservice-goods: /goods-service/**
+    #商品服务
+    goods-service: #goods-service这个名字是任意写的
+      path: /goods-service/**
+      serviceId: microservice-goods
+    #订单服务
+    orders-service:
+      path: /orders-service/**
+      serviceId: microservice-orders
+
     #指定忽略服务
     #ignored-services: 服务1的Id,服务2的Id
 
